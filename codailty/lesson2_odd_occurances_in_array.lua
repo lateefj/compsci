@@ -30,3 +30,26 @@ each element of array A is an integer within the range [1..1,000,000,000];
 all but one of the values in A occur an even number of times.
 Note: All arrays in this task are zero-indexed, unlike the common Lua convention. You can use #A to get the length of the array A.
 --]]
+
+local math = require("math")
+
+A = { [0] = 9, [1] = 3, [2] = 9, [3] = 3, [4] = 9, [5] = 7, [6] = 9 }
+
+local function find_unparied(t)
+	local counts = {}
+	for _, v in pairs(t) do
+		if counts[v] == nil then
+			counts[v] = 1
+		else
+			counts[v] = counts[v] + 1
+		end
+	end
+
+	for k, c in pairs(counts) do
+		if math.fmod(c, 2) ~= 0 then
+			return k
+		end
+	end
+end
+
+assert(find_unparied(A) == 7)

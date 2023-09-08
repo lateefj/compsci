@@ -1,0 +1,33 @@
+== Controlled Environment Coding
+
+Coding exercises that are in a controlled environment are not really helpful or informative about an candidates experience or capabilities. Ideally an existing project or work in progress would be better. A code exercise that woudl be useful should be more aligned with the actual work. There are some software the exists in a very controlled environment. Maybe even browser based code would seem like this a user and all the things going on in a browser that could go wrong are very far from controlled. Useful real world exercises would be much better. IO, latency and other problems would better representation of day to day work of most developers. 
+
+My implementation was in Lua as it is an language I want to improve my proficiency and also is not very time consuming to solve these basic problems. Lua also has very limited feature set which requires a little more work compared to something like Python which has so much builtin functionality a lot of these problems would be very few lines of code.
+
+A set of real world problems that are based on https://gist.github.com/jboner/2841832[Latency Number Every Progammer Should Know] would be a great start. Some useful examples that would be really helpful to test:
+
+* Web:
+  * Write endpoint that handles HTTP Requests
+  * Write HTTP endpoint that takes Post data
+    * Validate the data
+    * Respond with error
+  * Write and endpoint that queries a database (sqlite)
+    * Make the endpoint faster (indexes, pagination ect)
+    * Add Insert, Update endpoints
+* API:
+  * N+1 problem that can be improved by returning a list
+  * Pagination API design / impelementation
+  * API filter, sort, batch size design and implementation
+* SQL:
+  * Multiple updates in a single transaction vs individual transactions
+  * SQL N+1 Problem that can be easily address
+  * How to track versioning or represent event sourcing in SQL
+  * Index to optimize a specific query (Postgresql partial indexing would be awesome however just adding a sort to the index would be powerful)
+* Error Handling:
+  * Write a program that reads a file 
+    * Handle file not found
+    * Handle file not writable
+    * Implement API to file read / Write
+  * Using the API test all error use cases
+
+
