@@ -36,6 +36,7 @@ Note: All arrays in this task are zero-indexed, unlike the common Lua convention
 local basic = require("basic")
 
 local function solution(a)
+	table.sort(a)
 	for i, x in pairs(a) do
 		if i > basic.len(a) - 2 then
 			break
