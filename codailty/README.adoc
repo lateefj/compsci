@@ -2,6 +2,8 @@
 
 Coding exercises that are in a controlled environment are not really helpful or informative about an candidates experience or capabilities. Ideally an existing project or work in progress would be better. A code exercise that woudl be useful should be more aligned with the actual work. There are some software the exists in a very controlled environment. Maybe even browser based code would seem like this a user and all the things going on in a browser that could go wrong are very far from controlled. Useful real world exercises would be much better. IO, latency and other problems would better representation of day to day work of most developers. 
 
+Optimization in the real word is hard. I find it ironic that all the exercise say "efficient algorithm". 99% of the time it is about easy to read and understand logic. Optimizing in my experience is a very scientific process: hypothesise -> measure -> change -> analyze. Cache lines, block sizes, network latency can all become really significant issues at scale. Which brings me back to building software is not a closed system!
+
 My implementation was in Lua as it is an language I want to improve my proficiency and also is not very time consuming to solve these basic problems. Lua also has very limited feature set which requires a little more work compared to something like Python which has so much builtin functionality a lot of these problems would be very few lines of code.
 
 A set of real world problems that are based on https://gist.github.com/jboner/2841832[Latency Number Every Progammer Should Know] would be a great start. Some useful examples that would be really helpful to test:
@@ -30,4 +32,12 @@ A set of real world problems that are based on https://gist.github.com/jboner/28
     * Implement API to file read / Write
   * Using the API test all error use cases
 
+== Notes from some of the sections
 
+Lesson 6: Sorting
+
+One of the key lesson you learn about software development is get it working first optimize later. After doing these exercises no wonder we have a "premature optimization" problem in most software developers. All the sorting exercises I had to go back and add sorting to make it faster. At small N it is faster to just traverse the data set than index (sort in this case). I remember optimizing queries in Postgresql a couple years ago and the query optimizer on the database we had would not use indexes on tables if they where less than 5-10 thousands records. 
+
+Lesson 7: Stacks and Queues
+
+I have used stacks and queues a lot in programming. Writing an interpreter is a great way to get use to stacks and have a lot of fun in the learning exercise. Queues are a super critical data structure. Rarely do I implement them however it can be useful to write custom ones for very bespoke use cases. Since they are trivial to implement it is not a big lift to write them. 

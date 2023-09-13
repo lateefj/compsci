@@ -34,6 +34,12 @@ basic.sum = function(tbl)
 end
 
 basic.print_table = function(tbl)
+	for i, v in ipairs(tbl) do
+		print("key: " .. i .. " value: " .. v)
+	end
+end
+
+basic.print_map = function(tbl)
 	for i, v in pairs(tbl) do
 		print("key: " .. i .. " value: " .. v)
 	end
