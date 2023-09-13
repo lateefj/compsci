@@ -33,6 +33,14 @@ basic.sum = function(tbl)
 	return t
 end
 
+basic.subrange = function(tbl, i, j)
+	local sr = {}
+	for k = i, j, 1 do
+		table.insert(sr, tbl[k])
+	end
+	return sr
+end
+
 basic.print_table = function(tbl)
 	for i, v in ipairs(tbl) do
 		print("key: " .. i .. " value: " .. v)

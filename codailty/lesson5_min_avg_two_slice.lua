@@ -45,28 +45,26 @@ local basic = require("basic")
 
 local function solution(a)
 	local min = nil
+	-- Min start position is just silly extra work
+	local min_position = nil
 	for sk = 1, basic.len(a) do
 		for i, _ in pairs(a) do
 			local j = i + sk
-			local l = table.pack(table.unpack(a, i, j))
+			local l = basic.subrange(a, i, j)
 			local s = basic.sum(l)
 			local avg = s / basic.len(l)
-			print(
-				"i is " .. i .. " j is " .. j .. " sum is " .. s .. " diff is " .. (basic.len(l)) .. " avg is " .. avg
-			)
 			if min == nil or avg < min then
 				min = avg
+				min_position = i
 			end
 			if a[j + 1] == nil then
 				break
 			end
 		end
 	end
-	return min
+	return min_position
 end
 
 A = { [0] = 4, [1] = 2, [2] = 2, [3] = 5, [4] = 1, [5] = 5, [6] = 8 }
 
-basic.print_table(A)
-print(solution(A))
 assert(solution(A) == 1)
